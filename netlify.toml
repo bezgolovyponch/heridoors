@@ -1,5 +1,5 @@
 [build]
   publish = "out"
-  command = "yarn install --ignore-scripts && yarn build"
+  command = "yarn install --ignore && yarn build"
 [build.environment]
 SKIP_CI = "true"
