@@ -5,7 +5,7 @@ import config from '../config/index.json';
 const MainHero = () => {
   const { mainHero } = config;
 
-  const handleGetStartedClick = (event) => {
+  const handleGetStartedClick = (event: any) => {
     event.preventDefault();
     const targetSection = document.getElementById('about');
     if (targetSection) {

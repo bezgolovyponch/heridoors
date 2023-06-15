@@ -32,7 +32,7 @@ const Pricing = () => {
   const handlePrivacyModalClose = () => {
     setShowPrivacyModal(false);
   };
-  const handleNameChange = (event) => {
+  const handleNameChange = (event;) => {
     setName(event.target.value);
     setErrors({ ...errors, name: '' });
   };
