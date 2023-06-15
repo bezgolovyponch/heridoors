@@ -1,0 +1,146 @@
+{
+  "company": {
+    "name": "Our services",
+    "logo": "/assets/images/logo.png"
+  },
+  "navigation": [
+    {
+      "name": "Services",
+      "href": "product"
+    },
+    {
+      "name": "Features",
+      "href": "features"
+    }
+  ],
+  "callToAction": {
+    "text": "Contact us",
+    "href": "#about"
+  },
+  "mainHero": {
+    "title": "Premium recruitment &",
+    "subtitle": "Staffing Services",
+    "description": "With HireDoor, you can forget about all the exhaustment of recruitment process — concentrate on your business instead and and let us bring the perfect-fit professional right to you!.",
+    "img": "/assets/images/happyTeam.jpeg",
+    "primaryAction": {
+      "text": "Get started",
+      "href": "about"
+    },
+    "secondaryAction": {
+      "text": "Email us",
+      "href": ""
+    }
+  },
+  "product": {
+    "title": "Some things we do",
+    "items": [
+      {
+        "title": "Healthcare recruitment",
+        "description": "We are proud to have a track record of success in placing healthcare professionals across a range of specialties, including nursing, physician assistants, physical therapists, psychotherapist and many more. Our candidates are carefully vetted to ensure that they have the necessary qualifications and licenses, experience, and cultural fit to thrive in your organization.",
+
+        "img": "/assets/images/product1.jpg"
+      },
+      {
+        "title": "IT talent acquisition",
+        "description": "Our team have a deep understanding of the IT industry and its unique challenges. We have years of experience sourcing and attracting the best and  brightest minds in the industry.Whether you're looking for cybersecurity experts, software developers, or network engineers, we have the expertise and resources to help you build a world-class IT team.",
+
+        "img": "/assets/images/product2.jpg"
+      }
+    ]
+  },
+  "features": {
+    "title": " ",
+    "subtitle": "What are the benefits?",
+    "description": "",
+    "items": [
+      {
+        "name": "Team of recruitment experts with industry background",
+        "description": "Our recruiters have held various positions in IT, Healthcare, and other industries, making them the ones who know these fields best.",
+        "icon": "/assets/images/react.png"
+      },
+      {
+        "name": "Dedicated hire partner for your assistance",
+        "description": "At our company, we prioritize openness and integrity when working with our clients. This is why we assign a committed account manager to ensure consistent communication and deliver the highest level of service.",
+        "icon": "/assets/images/tailwindcss.svg"
+      },
+      {
+        "name": "Network is key",
+        "description": "Throughout the years, we have developed relationships with numerous experts and maintained contact with all candidates who have undergone our process. This has enabled us to possess perhaps the largest pool of potential candidates possible.",
+        "icon": "/assets/images/nextjs.svg"
+      },
+      {
+        "name": "Tailored recruitment solutions",
+        "description": "Our aim is to provide your organization with the best talent, and we achieve this by offering a solution that is adaptable and can be personalized to meet your specific requirements, resulting in the best possible results",
+        "icon": "/assets/images/ts.png"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Pricing",
+    "items": [
+      {
+        "name": "Free",
+        "price": "$0",
+        "priceDetails": "for one user",
+        "features": [
+          "1 user",
+          "Basic Support",
+          "1 GB of storage",
+          "Email support"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": "$15",
+        "priceDetails": "per user",
+
+        "features": [
+          "5 users",
+          "Priority Support",
+          "10 GB of storage",
+          "Phone and Email support"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "price": "$29",
+        "priceDetails": "per user",
+        "features": [
+          "50 users",
+          "24/7 Support",
+          "100 GB of storage",
+          "Phone and Email support"
+        ]
+      }
+    ]
+  },
+  "about": {
+    "sections": [
+      {
+        "name": "Something",
+        "href": "#",
+        "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+      },
+      {
+        "name": "Something",
+        "href": "#",
+        "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+      },
+      {
+        "name": "Something",
+        "href": "#",
+        "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+      },
+      {
+        "name": "Something",
+        "href": "#",
+        "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+      }
+    ],
+    "socialMedia": {
+      "github": "https://github.com/issaafalkattan",
+      "twitter": "https://twitter.com/issaafkattan",
+      "linkedin": "https://www.linkedin.com/in/issaaf-kattan/"
+    }
+  }
+}
