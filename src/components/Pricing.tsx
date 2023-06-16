@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 
 import PrivacyPolicyModal from './Privacy';
 import TermsConditionsModal from './Terms';
@@ -10,7 +10,12 @@ const Pricing = () => {
   const [consentChecked, setConsentChecked] = useState(false);
   const [showTermsModal, setShowTermsModal] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
-  const [errors, setErrors] = useState({
+  const [errors, setErrors] = useState<{
+    name?: string;
+    email?: string;
+    message?: string;
+    consent?: string;
+  }>({
     name: '',
     email: '',
     message: '',
@@ -32,31 +37,38 @@ const Pricing = () => {
   const handlePrivacyModalClose = () => {
     setShowPrivacyModal(false);
   };
-  const handleNameChange = (event;) => {
+
+  const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
     setErrors({ ...errors, name: '' });
   };
 
-  const handleEmailChange = (event) => {
+  const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
     setErrors({ ...errors, email: '' });
   };
 
-  const handleMessageChange = (event) => {
+  const handleMessageChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(event.target.value);
     setErrors({ ...errors, message: '' });
   };
 
-  const handleConsentCheckboxChange = (event) => {
+  const handleConsentCheckboxChange = (
+    event: ChangeEvent<HTMLInputElement>
+  ) => {
     setConsentChecked(event.target.checked);
     setErrors({ ...errors, consent: '' });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // validate fields
-    const formErrors = {};
+    const formErrors: {
+      name?: string;
+      email?: string;
+      message?: string;
+      consent?: string;
+    } = {};
     if (name.trim() === '') {
       formErrors.name = 'Name is required';
     }
@@ -73,10 +85,16 @@ const Pricing = () => {
     }
 
     if (Object.keys(formErrors).length > 0) {
-      setErrors(formErrors);
+      setErrors(
+        formErrors as {
+          name?: string;
+          email?: string;
+          message?: string;
+          consent?: string;
+        }
+      );
       return;
     }
-
     // submit form
     console.log('Submitting form...', { name, email, message });
   };
@@ -95,7 +113,7 @@ const Pricing = () => {
       />
       <div
         className="mx-auto px-2 pt-4 pb-12 text-primary"
-        style={{ Width: '100%' }}
+        style={{ width: '100%' }}
       >
         <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-primary">
           Contact Us
@@ -156,7 +174,7 @@ const Pricing = () => {
                     <textarea
                       className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                       id="message"
-                      rows="6"
+                      rows={6}
                       placeholder="Enter your message here"
                       value={message}
                       onChange={handleMessageChange}
