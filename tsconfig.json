@@ -10,6 +10,9 @@
     "alwaysStrict": true,
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
+    "paths": {
+      "react": ["./node_modules/@types/react"]
+    },
 
     "noImplicitAny": true,
     "noImplicitReturns": true,
