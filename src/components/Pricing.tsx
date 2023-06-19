@@ -93,10 +93,7 @@ const Pricing = () => {
           consent?: string;
         }
       );
-      return;
     }
-    // submit form
-    console.log('Submitting form...', { name, email, message });
   };
 
   return (
