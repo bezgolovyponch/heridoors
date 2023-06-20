@@ -19,7 +19,6 @@ const TermsConditionsModal: React.FC<TermsConditionsModalProps> = ({
         <div className="modal-content">
           <h2>Terms and Conditions</h2>
           <div>
-            <p>Effective Date: [Insert Date]</p>
             <p>
               These Terms and Conditions govern your use of the services
               provided by Pragout group s.r.o. through our website.

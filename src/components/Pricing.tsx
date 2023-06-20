@@ -1,5 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 
+import { init, sendForm } from 'emailjs-com';
+
 import PrivacyPolicyModal from './Privacy';
 import TermsConditionsModal from './Terms';
 
@@ -69,6 +71,7 @@ const Pricing = () => {
       message?: string;
       consent?: string;
     } = {};
+
     if (name.trim() === '') {
       formErrors.name = 'Name is required';
     }
@@ -93,6 +96,27 @@ const Pricing = () => {
           consent?: string;
         }
       );
+    } else {
+      init('FDgipbD-bbODkhERA');
+      const formData = new FormData(event.target as HTMLFormElement);
+      formData.set('from_name', name); // Set the sender's name
+      formData.set('from_email', email); // Set the sender's email
+      formData.set('from_message', message);
+
+      sendForm(
+        'service_test1',
+        'template_cti1gfj',
+        event.target as HTMLFormElement,
+        'FDgipbD-bbODkhERA'
+      )
+        .then((response) => {
+          console.log('Email sent successfully!', response);
+          // Add any success handling code here
+        })
+        .catch((error) => {
+          console.error('Error sending email:', error);
+          // Add any error handling code here
+        });
     }
   };
 
@@ -102,8 +126,6 @@ const Pricing = () => {
         showModal={showTermsModal}
         handleCloseModal={handleTermsModalClose}
       />
-
-      {/* Render the Privacy Policy modal */}
       <PrivacyPolicyModal
         showModal={showPrivacyModal}
         handleCloseModal={handlePrivacyModalClose}
@@ -138,11 +160,15 @@ const Pricing = () => {
                       className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       id="name"
                       type="text"
+                      name="from_name"
                       placeholder="John Doe"
                       value={name}
                       onChange={handleNameChange}
                       required
                     />
+                    {errors.name && (
+                      <p className="text-red-500 mt-1">{errors.name}</p>
+                    )}
                   </div>
                   <div className="mb-4">
                     <label
@@ -155,11 +181,15 @@ const Pricing = () => {
                       className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       id="email"
                       type="email"
+                      name="from_email"
                       placeholder="johndoe@example.com"
                       value={email}
                       onChange={handleEmailChange}
                       required
                     />
+                    {errors.email && (
+                      <p className="text-red-500 mt-1">{errors.email}</p>
+                    )}
                   </div>
                   <div className="mb-4">
                     <label
@@ -171,12 +201,16 @@ const Pricing = () => {
                     <textarea
                       className="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                       id="message"
+                      name="from_message"
                       rows={6}
                       placeholder="Enter your message here"
                       value={message}
                       onChange={handleMessageChange}
                       required
                     />
+                    {errors.message && (
+                      <p className="text-red-500 mt-1">{errors.message}</p>
+                    )}
                   </div>
                   <div className="mb-4">
                     <label className="flex items-center">
@@ -204,10 +238,10 @@ const Pricing = () => {
                         </button>
                       </span>
                     </label>
+                    {errors.consent && (
+                      <p className="text-red-500 mt-1">{errors.consent}</p>
+                    )}
                   </div>
-                  {errors.consent && (
-                    <p className="text-red-500 mb-4">{errors.consent}</p>
-                  )}
                   <div className="flex items-center justify-center">
                     <button
                       className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

@@ -19,7 +19,6 @@ const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({
         <div className="modal-content">
           <h2>Privacy Policy</h2>
           <div>
-            <p>Effective Date: [Insert Date]</p>
             <p>
               This Privacy Policy describes how Pragout group s.r.o. collects,
               uses, and discloses personal information when you use our website

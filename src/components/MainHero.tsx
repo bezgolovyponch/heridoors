@@ -5,14 +5,14 @@ import config from '../config/index.json';
 const MainHero = () => {
   const { mainHero } = config;
 
+  const scrollToSection = (section: HTMLElement) => {
+    section.scrollIntoView({ behavior: 'smooth' });
+  };
   const handleGetStartedClick = (event: any) => {
     event.preventDefault();
     const targetSection = document.getElementById('about');
     if (targetSection) {
-      window.scrollTo({
-        top: targetSection.offsetTop,
-        behavior: 'smooth',
-      });
+      scrollToSection(targetSection);
     }
   };
 
