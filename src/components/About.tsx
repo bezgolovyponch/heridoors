@@ -16,7 +16,10 @@ const About = () => {
     >
       <div className="flex flex-col items-center justify-center">
         <div>
-          <img src={logo} alt={companyName} className="w-full h-16" />
+          <a href="#">
+            <span className="sr-only">{companyName}</span>
+            <img alt="logo" className="h-16 border-transparent" src={logo} />
+          </a>
         </div>
         <div className="flex flex-wrap sm:gap-10 gap-8 items-center justify-center mt-4 h-12">
           {navigation.map((navItem, index) => (

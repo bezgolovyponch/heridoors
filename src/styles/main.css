@@ -9,15 +9,26 @@
   --color-tertiaty: #99a0a3;
 }
 
-a { 
-  @apply text-red-700;
+a:hover,
+a:focus {
+  outline: none; /* Remove the default outline */
+}
+.logo-link {
+  display: inline-block;
+  position: relative;
 }
 
-a:hover {
-  @apply border-b-2 border-red-700;
+.logo-link:hover .logo {
+  transform: translateY(0);
 }
 
+.logo {
+  transition: transform 0.2s ease-in-out;
+}
 
+.logo:active {
+  transform: scale(0.9);
+}
 
 .content p {
   @apply my-6;
